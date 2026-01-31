@@ -69,7 +69,14 @@ export const handleUserCreate = auth.user().onCreate(async (user) => {
   }
 });
 
-const callableOptions = { invoker: "public" as const };
+const callableOptions = {
+  invoker: "public" as const,
+  cors: [
+    "https://ajaimemory.web.app",
+    "https://ajaimemory.firebaseapp.com",
+    "http://localhost:3000",
+  ],
+};
 
 export const approveUser = onCall(callableOptions, async (request) => {
   requireAdmin(request.auth ?? undefined);
