@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --background: 26 38% 96%;
+    --foreground: 20 15% 12%;
+    --card: 24 36% 98%;
+    --card-foreground: 20 15% 12%;
+    --popover: 24 36% 98%;
+    --popover-foreground: 20 15% 12%;
+    --primary: 15 36% 22%;
+    --primary-foreground: 26 38% 96%;
+    --secondary: 28 24% 90%;
+    --secondary-foreground: 20 20% 18%;
+    --muted: 28 22% 92%;
+    --muted-foreground: 20 8% 40%;
+    --accent: 15 40% 36%;
+    --accent-foreground: 24 36% 98%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 24 20% 86%;
+    --input: 24 20% 86%;
+    --ring: 15 40% 36%;
+    --radius: 0.85rem;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
