@@ -47,11 +47,11 @@ export function HeroCarousel({
 
   return (
     <section
-      className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-[0_30px_70px_-45px_rgba(15,10,8,0.6)]"
+      className="relative overflow-hidden rounded-none bg-transparent shadow-none"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative flex w-full items-center justify-center bg-white">
+      <div className="relative flex w-full items-center justify-center bg-transparent">
         <div
           className="relative"
           style={{

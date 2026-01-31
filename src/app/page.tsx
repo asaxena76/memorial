@@ -63,44 +63,32 @@ export default function PublicHomePage() {
 
   return (
     <div className="grid gap-10">
-      <HeroCarousel
-        slides={heroSlides}
-        fallbackName={settings?.subjectName}
-        fallbackDates={settings?.subjectDates}
-      />
+      <div className="relative">
+        <div className="pointer-events-none absolute right-0 top-0 z-20 flex flex-wrap gap-3">
+          <div className="pointer-events-auto flex flex-wrap gap-3">
+            {user ? (
+              <Button asChild>
+                <Link href="/submit">Share a memory</Link>
+              </Button>
+            ) : (
+              <Button asChild>
+                <Link href="/login">Sign in to share</Link>
+              </Button>
+            )}
+            <Button variant="outline" asChild>
+              <Link href="/gallery">Open full gallery</Link>
+            </Button>
+          </div>
+        </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          {settings?.heroQuote ? (
-            <p className="max-w-3xl text-base text-muted-foreground">
-              “{settings.heroQuote}”
-            </p>
-          ) : null}
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {user ? (
-            <Button asChild>
-              <Link href="/submit">Share a memory</Link>
-            </Button>
-          ) : (
-            <Button asChild>
-              <Link href="/login">Sign in to share</Link>
-            </Button>
-          )}
-          <Button variant="outline" asChild>
-            <Link href="/gallery">Open full gallery</Link>
-          </Button>
-        </div>
+        <HeroCarousel
+          slides={heroSlides}
+          fallbackName={settings?.subjectName}
+          fallbackDates={settings?.subjectDates}
+        />
       </div>
 
       <section className="grid gap-4">
-        <div>
-          <h3 className="font-serif text-2xl">Gallery</h3>
-          <p className="text-sm text-muted-foreground">
-            A visual collection of recent memories.
-          </p>
-        </div>
-
         {loading ? (
           <p className="text-sm text-muted-foreground">Loading gallery...</p>
         ) : galleryItems.length === 0 ? (
