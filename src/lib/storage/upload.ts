@@ -26,7 +26,10 @@ export async function uploadPostFile({
     contentType: string;
     sizeBytes: number;
   }>((resolve, reject) => {
-    const task = uploadBytesResumable(storageRef, file);
+    const task = uploadBytesResumable(storageRef, file, {
+      contentType: file.type || "application/octet-stream",
+      cacheControl: "public, max-age=31536000, immutable",
+    });
 
     task.on(
       "state_changed",

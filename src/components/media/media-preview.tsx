@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 
 import type { PostMedia } from "@/lib/models/post";
-import { getImageObjectUrl, getVideoUrl } from "@/lib/storage/media";
+import { getImageUrl, getVideoUrl } from "@/lib/storage/media";
 import { cn } from "@/lib/utils";
 
 export function MediaPreview({
@@ -20,13 +20,12 @@ export function MediaPreview({
 
   useEffect(() => {
     let active = true;
-    let objectUrl: string | null = null;
 
     const load = async () => {
       try {
         if (media.kind === "image") {
-          objectUrl = await getImageObjectUrl(media.storagePath);
-          if (active) setUrl(objectUrl);
+          const downloadUrl = await getImageUrl(media.storagePath);
+          if (active) setUrl(downloadUrl);
         } else {
           const downloadUrl = await getVideoUrl(media.storagePath);
           if (active) setUrl(downloadUrl);
@@ -40,7 +39,6 @@ export function MediaPreview({
 
     return () => {
       active = false;
-      if (objectUrl) URL.revokeObjectURL(objectUrl);
     };
   }, [media]);
 
@@ -62,6 +60,7 @@ export function MediaPreview({
       <video
         className={cn("h-56 w-full rounded-2xl", className)}
         controls
+        preload="metadata"
         src={url}
       />
     );
@@ -71,6 +70,8 @@ export function MediaPreview({
     <img
       src={url}
       alt="Memorial media"
+      loading="lazy"
+      decoding="async"
       className={cn(
         "h-56 w-full rounded-2xl",
         mode === "cover" ? "object-cover" : "object-contain",
