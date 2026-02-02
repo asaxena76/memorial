@@ -284,23 +284,22 @@ def main():
         f.write("CSV file: `docs/auth-accounts.csv`\n")
 
     print("Checking for already imported posts...", flush=True)
-    existing_keys = set()
-    # Backfill importKey for posts created by placeholder users
-    for author in authors:
-        uid = author_map[author]["uid"]
-        for doc_snap in (
-            db.collection("posts")
-            .where("createdBy", "==", uid)
-            .stream()
-        ):
-            data = doc_snap.to_dict() or {}
-            caption = data.get("caption", "")
-            created_at = data.get("createdAt")
-            date_str = ""
-            if hasattr(created_at, "date"):
-                date_str = created_at.date().isoformat()
-            import_key = data.get("importKey")
-        if not import_key and caption:
+    existing_posts = {}
+    uid_to_author = {info["uid"]: author for author, info in author_map.items()}
+
+    for doc_snap in db.collection("posts").stream():
+        data = doc_snap.to_dict() or {}
+        import_key = data.get("importKey")
+        created_by = data.get("createdBy")
+        caption = data.get("caption", "")
+        created_at = data.get("createdAt")
+        date_str = ""
+        if hasattr(created_at, "date"):
+            date_str = created_at.date().isoformat()
+
+        # Backfill importKey for posts created by placeholder users.
+        if not import_key and created_by in uid_to_author and caption:
+            author = uid_to_author[created_by]
             import_key = make_import_key(author, date_str, clean_text(caption))
             doc_snap.reference.update(
                 {
@@ -308,16 +307,29 @@ def main():
                     "importSource": "whatsapp",
                 }
             )
-        if caption and not data.get("authorName"):
+            data["importKey"] = import_key
+
+        # Backfill authorName when missing.
+        if created_by in uid_to_author and not data.get("authorName"):
             doc_snap.reference.update(
                 {
-                    "authorName": author,
+                    "authorName": uid_to_author[created_by],
                 }
             )
-        if import_key:
-            existing_keys.add(import_key)
+            data["authorName"] = uid_to_author[created_by]
 
-    print(f"Found {len(existing_keys)} existing imported posts.", flush=True)
+        if import_key:
+            existing_posts[import_key] = {
+                "ref": doc_snap.reference,
+                "data": data,
+                "media_paths": {
+                    item.get("storagePath")
+                    for item in (data.get("media") or [])
+                    if item.get("storagePath")
+                },
+            }
+
+    print(f"Found {len(existing_posts)} existing imported posts.", flush=True)
 
     print("Importing posts and uploading media...", flush=True)
     for idx, entry in enumerate(entries, start=1):
@@ -334,9 +346,61 @@ def main():
 
         entry_text = clean_text(entry.get("text") or "")
         import_key = make_import_key(entry["author"], date_str, entry_text)
-        if import_key in existing_keys:
+        if import_key in existing_posts:
+            post_info = existing_posts[import_key]
+            existing_media = list(post_info["data"].get("media") or [])
+            new_media = []
+
+            doc_id = f"import-{import_key[:18]}"
+            for path in entry.get("media", []):
+                file_path = Path(path)
+                if not file_path.exists():
+                    print(f"  [warn] missing media: {file_path}", flush=True)
+                    continue
+                content_type, _ = mimetypes.guess_type(str(file_path))
+                content_type = content_type or "application/octet-stream"
+
+                storage_path = f"uploads/{uid}/imported/{doc_id}/{file_path.name}"
+                if storage_path in post_info["media_paths"]:
+                    continue
+
+                blob = bucket.blob(storage_path)
+                if blob.exists():
+                    print(
+                        f"  [{idx}/{len(entries)}] exists {file_path.name} -> {storage_path}",
+                        flush=True,
+                    )
+                else:
+                    print(
+                        f"  [{idx}/{len(entries)}] uploading {file_path.name} -> {storage_path}",
+                        flush=True,
+                    )
+                    blob.upload_from_filename(str(file_path), content_type=content_type)
+                    blob.cache_control = "public, max-age=31536000, immutable"
+                    blob.patch()
+
+                new_media.append(
+                    {
+                        "kind": "video"
+                        if content_type.startswith("video/")
+                        else "image",
+                        "storagePath": storage_path,
+                        "contentType": content_type,
+                        "sizeBytes": file_path.stat().st_size,
+                    }
+                )
+                post_info["media_paths"].add(storage_path)
+
+            if new_media:
+                merged = existing_media + new_media
+                post_info["ref"].update({"media": merged})
+                post_info["data"]["media"] = merged
+
             if idx % 10 == 0:
-                print(f"  - skipped {idx}/{len(entries)} posts (already imported)", flush=True)
+                print(
+                    f"  - merged {idx}/{len(entries)} posts (existing import)",
+                    flush=True,
+                )
             continue
 
         doc_id = f"import-{import_key[:18]}"
