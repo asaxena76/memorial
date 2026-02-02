@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { format } from "date-fns";
 import { deleteField, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { toast } from "sonner";
@@ -10,7 +11,6 @@ import { useAuth } from "@/components/providers/auth-provider";
 import { cn } from "@/lib/utils";
 import { db } from "@/lib/firebase/client";
 import { Button } from "@/components/ui/button";
-import { RequireApproved } from "@/components/auth/require-approved";
 import {
   Dialog,
   DialogContent,
@@ -34,8 +34,13 @@ export default function MySubmissionsPage() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setPosts([]);
+      setLoading(false);
+      return;
+    }
     let mounted = true;
+    setLoading(true);
     listPostsByUser(user.uid)
       .then((data) => {
         if (mounted) setPosts(data);
@@ -48,6 +53,19 @@ export default function MySubmissionsPage() {
       mounted = false;
     };
   }, [user]);
+
+  if (!user) {
+    return (
+      <div className="grid gap-4">
+        <p className="text-sm text-muted-foreground">
+          Sign in to view and manage your submissions.
+        </p>
+        <Button asChild size="lg" className="w-full sm:w-auto">
+          <Link href="/login">Sign in</Link>
+        </Button>
+      </div>
+    );
+  }
 
   if (loading) {
     return <p className="text-sm text-muted-foreground">Loading submissions...</p>;
@@ -62,9 +80,8 @@ export default function MySubmissionsPage() {
   }
 
   return (
-    <RequireApproved>
-      <>
-        <div className="grid gap-4">
+    <>
+      <div className="grid gap-4">
         {posts.map((post) => (
           <div
             key={post.id}
@@ -200,6 +217,5 @@ export default function MySubmissionsPage() {
         </DialogContent>
       </Dialog>
     </>
-    </RequireApproved>
   );
 }

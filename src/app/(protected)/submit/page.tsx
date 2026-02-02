@@ -13,7 +13,7 @@ import { db } from "@/lib/firebase/client";
 import { createPostId, uploadPostFile } from "@/lib/storage/upload";
 import { getImageMetadata, getVideoMetadata } from "@/lib/media/metadata";
 import type { PostMedia } from "@/lib/models/post";
-import { RequireApproved } from "@/components/auth/require-approved";
+import { RequireAuth } from "@/components/auth/require-auth";
 
 const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
 
@@ -40,7 +40,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export default function SubmitPage() {
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const [uploadProgress, setUploadProgress] = useState<Record<string, number>>(
     {}
   );
@@ -95,6 +95,7 @@ export default function SubmitPage() {
 
       await setDoc(doc(db, "posts", postId), {
         createdBy: user.uid,
+        authorName: profile?.displayName || user.displayName || user.email,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
         status: "pending",
@@ -112,7 +113,7 @@ export default function SubmitPage() {
   };
 
   return (
-    <RequireApproved>
+    <RequireAuth>
       <div className="mx-auto max-w-2xl">
         <h2 className="font-serif text-2xl">Share a memory</h2>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -189,6 +190,6 @@ export default function SubmitPage() {
           </Button>
         </form>
       </div>
-    </RequireApproved>
+    </RequireAuth>
   );
 }

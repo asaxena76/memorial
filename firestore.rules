@@ -10,10 +10,6 @@ service cloud.firestore {
       return request.auth != null && request.auth.token.admin == true;
     }
 
-    function isApproved() {
-      return request.auth != null && request.auth.token.approved == true;
-    }
-
     match /users/{uid} {
       allow read: if isAdmin() || (isSignedIn() && request.auth.uid == uid);
       allow list: if isAdmin();
@@ -26,7 +22,7 @@ service cloud.firestore {
         || isAdmin()
         || (isSignedIn() && resource.data.createdBy == request.auth.uid);
 
-      allow create: if isApproved()
+      allow create: if isSignedIn()
         && request.resource.data.status == "pending"
         && request.resource.data.createdBy == request.auth.uid
         && !("reviewedAt" in request.resource.data)
@@ -34,7 +30,7 @@ service cloud.firestore {
         && !("rejectedReason" in request.resource.data);
 
       allow update: if isAdmin()
-        || (isApproved()
+        || (isSignedIn()
           && resource.data.createdBy == request.auth.uid
           && request.resource.data.createdBy == request.auth.uid
           && (

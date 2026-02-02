@@ -18,7 +18,7 @@ export function PublicShell({
       <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">
         <header className="space-y-3">
           <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-            private family memorial
+            family memorial
           </p>
           <h1 className="font-serif text-4xl leading-tight sm:text-5xl">
             {title}

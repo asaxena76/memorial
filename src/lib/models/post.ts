@@ -16,6 +16,7 @@ export const postMediaSchema = z.object({
 
 export const postSchema = z.object({
   createdBy: z.string(),
+  authorName: z.string().optional(),
   createdAt: z.any(),
   updatedAt: z.any().optional(),
   status: postStatusSchema,

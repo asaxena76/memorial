@@ -26,7 +26,7 @@ export async function getPostById(postId: string): Promise<PostWithId | null> {
   return parsePost(snap.id, snap.data());
 }
 
-export async function listApprovedPosts(max = 50): Promise<PostWithId[]> {
+export async function listApprovedPosts(max = 200): Promise<PostWithId[]> {
   const q = query(
     collection(db, "posts"),
     where("status", "==", "approved"),

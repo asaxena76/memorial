@@ -26,7 +26,7 @@ const hindiFont = Arya({
 
 export const metadata: Metadata = {
   title: "Memorial",
-  description: "A private memorial space for family memories.",
+  description: "A memorial space for family memories.",
 };
 
 export default function RootLayout({

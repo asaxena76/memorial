@@ -12,10 +12,15 @@ import { db } from "@/lib/firebase/client";
 import { userProfileSchema, type UserProfile } from "@/lib/models/user";
 
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
-  const snap = await getDoc(doc(db, "users", uid));
-  if (!snap.exists()) return null;
-  const parsed = userProfileSchema.safeParse(snap.data());
-  return parsed.success ? parsed.data : null;
+  try {
+    const snap = await getDoc(doc(db, "users", uid));
+    if (!snap.exists()) return null;
+    const parsed = userProfileSchema.safeParse(snap.data());
+    return parsed.success ? parsed.data : null;
+  } catch (error) {
+    console.warn("Unable to load user profile.", error);
+    return null;
+  }
 }
 
 export async function listPendingUsers(): Promise<UserProfile[]> {

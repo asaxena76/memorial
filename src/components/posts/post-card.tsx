@@ -56,6 +56,8 @@ function MediaThumb({ media }: { media: PostMedia }) {
 export function PostCard({ post }: { post: PostWithId }) {
   const { profile } = useUserProfile(post.createdBy);
   const createdAt = post.createdAt?.toDate?.() ?? null;
+  const authorName =
+    post.authorName || profile?.displayName || "Family member";
 
   return (
     <article className="rounded-3xl border border-border/60 bg-card/60 px-6 py-8 shadow-[0_18px_40px_-32px_rgba(20,15,10,0.5)]">
@@ -83,7 +85,7 @@ export function PostCard({ post }: { post: PostWithId }) {
             "font-serif text-base text-foreground/80 sm:text-lg"
           )}
         >
-          {profile?.displayName ?? "Family member"}
+          {authorName}
         </span>
       </div>
     </article>

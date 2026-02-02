@@ -32,6 +32,8 @@ export default function PostDetailPage() {
   }, [postId]);
 
   const { profile } = useUserProfile(post?.createdBy);
+  const authorName =
+    post?.authorName || profile?.displayName || "Family member";
   const createdAt = post?.createdAt?.toDate?.() ?? null;
 
   if (loading) {
@@ -56,7 +58,7 @@ export default function PostDetailPage() {
     <div className="grid gap-6">
       <header className="space-y-2">
         <p className="text-sm text-muted-foreground">
-          {profile?.displayName ?? "Family member"}
+          {authorName}
           {createdAt ? ` · ${format(createdAt, "MMM d, yyyy")}` : ""}
         </p>
         <h2 className="font-serif text-2xl">{post.caption}</h2>

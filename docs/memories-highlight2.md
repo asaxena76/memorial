@@ -1,8 +1,8 @@
 ## Anita Saxena
  अजय मामा जी को शत शत नमन
 मामा जी एक जिंदादिल और शानदार व्यक्तित्व वाले थे, हमेशा हसते मुस्कराते रहे, 
-- याद आ रहा है जब भी मामाजी के घर जाते थे मामाजी हँसते हुए कहते थे आओ आओ, उन्होंने हमेशा बेटी माना सबका बहुत ख्याल रखते थे, 
-- बहुत सारी बातें और यादें हैं, जिस गाने पर मामी जी के साथ dance करना था वो 1st मार्च को ही कर लिया he enjoyed his full till last night of his life 😢😢
+याद आ रहा है जब भी मामाजी के घर जाते थे मामाजी हँसते हुए कहते थे आओ आओ, उन्होंने हमेशा बेटी माना सबका बहुत ख्याल रखते थे, 
+बहुत सारी बातें और यादें हैं, जिस गाने पर मामी जी के साथ dance करना था वो 1st मार्च को ही कर लिया he enjoyed his full till last night of his life 😢😢
 
 
 ## Ramji Saxena
@@ -14,12 +14,12 @@
 
 ## Ritika Saxena
 
- With a heavy heart yet some beautiful memories and an eternal love for Tauji .. we bid adieu..
+With a heavy heart yet some beautiful memories and an eternal love for Tauji .. we bid adieu..
 Will forever remember him beaming ear to ear like in this pic and dancing with elan !!! ❤️ 
 
 ## Sanjay
 
- In the loving memory of my dear chacha....it was my honour to meet such a kind, wonderful person who was their for me in every stage of my life....
+In the loving memory of my dear chacha....it was my honour to meet such a kind, wonderful person who was their for me in every stage of my life....
 He was my father figure who guided me nuture me and helping me to shape my life make me the person which I am today.
 
 ## Vikas Saxena
@@ -36,104 +36,86 @@ He was my father figure who guided me nuture me and helping me to shape my life 
 *🙏मेरी अश्रुपूरित श्रद्धांजलि 🙏*
 
 ## Abha Saxena
-
-- Quote (2025-03-11): Lovely memories with my dear respected bhaisaheb! 
-- He was a gem with kind n generous heart so loving n affectionate! Just speechless..🙏♥️😢
-
+He was a gem with kind n generous heart so loving n affectionate! Just speechless..🙏♥️😢
 
 ## Anil Saxena
 
-- Quote (2025-03-04): Ajai bhai was an awesome personality with super energy tank which is 
-- being depicted in his last dancing performance on 1 March 2025 while holding oxygen bag and tube. 
-- We had a very very nice and joyable time togather at Lucknow for the last more than 30 years
+Ajai bhai was an awesome personality with super energy tank which is 
+being depicted in his last dancing performance on 1 March 2025 while holding oxygen bag and tube. 
+We had a very very nice and joyable time togather at Lucknow for the last more than 30 years
 
 
 ## Babita Saxena
+ If anyone ask me to describe life, then my answer will be Ajay Mamaji 
+(full of love and blessings), We miss you too much 🙏🏻🙏🏻🙏🏻
+ 💐💐🙏🙏
 
-- Quote (2025-03-04): If anyone ask me to describe life, then my answer will be Ajay Mamaji 
-- (full of love and blessings), We miss you too much 🙏🏻🙏🏻🙏🏻
-- Quote (2025-04-02): 💐💐🙏🙏
-
-## ~ Dr B K Saxena
-
-- Ajay ji was not only my brother in law, 
-
+## Dr B K Saxena
+Ajay ji was not only my brother in law, 
 But also he was a friend, without any flaw.
-
 He wore always a smiling face,
-
 Giving feelings in abundance, full of grace.
-
 Always there in hour of need,
 Kept entire family smiling, with all his deeds.
- 
 Cherish the memories, giving feelings so strong,
-
 Ajay Bhai, 
 You will be remembered by all of us,  
 For life long.
 
-## ~ Dr Shailja Bhatnagar
-
-- Quote (2025-03-05): Ude jab jab julfe teri ...ye song jab bhi sunaye deta hai ..
-- to yahi muh se nikalata hai ki Ajay mama ji song aa gaya.....Man se to mamaji hamesha ham sab 
-- ke sath hai or Unka Aashirwad hamesha ham sab ko milata rahega 🙏 <This message was edited>
-
-
+## Dr Shailja Bhatnagar
+Ude jab jab julfe teri ...ye song jab bhi sunaye deta hai .. 
+to yahi muh se nikalata hai ki Ajay mama ji song aa gaya.....Man se to mamaji hamesha ham sab 
+ke sath hai or Unka Aashirwad hamesha ham sab ko milata rahega 🙏 <This message was edited>
 
 ## Manisha Srivastava
+ Ajai chacha...a father in law who just became my father ...from the day we met for the first time, 
+months before my marriage....he was always there  when I needed a father figure...he stood by me in difficult times , 
+when my own father passed away....Happy to have spent good times with him...love u always....hope
+u will always remain with me in spirit...
 
-- Quote (2025-03-04): Ajai chacha...a father in law who just became my father ...from the day we met for the first time, 
-- months before my marriage....he was always there  when I needed a father figure...he stood by me in difficult times , 
-- when my own father passed away....Happy to have spent good times with him...love u always....hope
-- u will always remain with me in spirit...
-- 
 ## ~ Neelam Pradhan
 
-- Quote (2025-03-04): On our way
-- Quote (2025-03-04): Ajay Mama ji, with his smiling face so full of love and blessings, 
-- was a joy to be with. He was more of a friend than Mama ji for both of us. When we visited him in Lucknow with our kids when they were very young, 
-- he made it a point to take them on taanga rides, autorickshaw rides and two wheeler rides, which were all real novelties for them, and they always remember it. His last visit to our place in July 2023 was full of fun and laughter and he danced on his favourite song at Pradeep's birthday. He, his love, blessings and joy of life will be sorely missed by us. 🙏 ❤️ 🙏
-- Quote (2025-03-05): We are on the train to delhi. Bunty, Aashoo, Megha and Gunjan, all of you were exceptional under the circumstances. 
-- Mami ji, our pranams and deep regards to you for doing what you did and allowing us to participate fully in the grieving by turning it into a celebration of dear Mama jis wonderful time with all of us. ❤️ 🕉️ 🙏🙏 We are already missing all of you. Sorry we couldn't make it to the urban cove this morning.
-- Quote (2025-04-03): Hard to believe Mami ji! We miss him very much. Please stay strong ❤️
+Ajay Mama ji, with his smiling face so full of love and blessings, 
+was a joy to be with. He was more of a friend than Mama ji for both of us. When we visited him in Lucknow with our kids when they were very young, 
+he made it a point to take them on taanga rides, autorickshaw rides and two wheeler rides, 
+which were all real novelties for them, and they always remember it. His last visit to our place in July 2023
+was full of fun and laughter and he danced on his favourite song at Pradeep's birthday. He, his love, 
+blessings and joy of life will be sorely missed by us. 🙏 ❤️ 🙏
 
 
 
 ## ~ Purvi
 
-- Quote (2025-03-06): Remembering Mamaji, a man whose heart was as big as his laughter. 
-- He had a way of making everyone feel special—with his warmth, affection, and friendly nature. 
-- His presence filled every gathering with joy, and his absence leaves a void that can never be filled. 
-- Though he is no longer with us, his love and memories will forever live in our hearts. Rest in peace, Mamaji—you are deeply missed.
+ Remembering Mamaji, a man whose heart was as big as his laughter. 
+He had a way of making everyone feel special—with his warmth, affection, and friendly nature. 
+His presence filled every gathering with joy, and his absence leaves a void that can never be filled. 
+Though he is no longer with us, his love and memories will forever live in our hearts. Rest in peace, Mamaji—you are deeply missed.
 
-## ~ Rajiv Mohan Saxena
+## Rajiv Mohan Saxena
 
-
-- Quote (2025-04-02): Cannot recount the trials and tribulations we  faced together, 
-- remembered him every-day, of last one month. Pray he has attained the peace he deserved in every way.
-
+ Cannot recount the trials and tribulations we  faced together, 
+ remembered him every-day, of last one month. Pray he has attained the peace he deserved in every way.
 
 
-## ~ Vishal Bhatnagar
+## Vishal Bhatnagar
 
-- Quote (2025-03-04): Very good thought 👍 
-This will be a real tribute to his life, which was full of love, care ,music, and joy.
-- Quote (2025-03-06): I have a lot of memories with Mama ji. First time I meet him at Aashu's home at Indira Nagar on 1st Jan 2007 .My in laws along with  Shailja came to their place and our Marriage settled there on first meeting. He was such a nice person that he made me very comfortable. 
+I have a lot of memories with Mama ji. 
+First time I meet him at Aashu's home at Indira Nagar on 1st Jan 2007 .My in laws along with 
+Shailja came to their place and our Marriage settled there on first meeting. He was such a nice person that he made me very comfortable. 
 Next we went to their house after Marriage. We had a very good time at evening. 
-- He was very fond of cricket match. Initially IPL was not there. Indian Cricket league (ICL) was on TV and he enjoyed with me 
-- along with Aashu full match and we had dinner together. His care for  me was superb and it was my first interaction with him.
-
-Once he came to our home in 2012 and he discussed with me about financial and future savings planning with me. He was a father figure, and whenever we went to Lucknow either we went to his house or he came to our place.
+He was very fond of cricket match. Initially IPL was not there. Indian Cricket league (ICL) was on TV and he enjoyed with me 
+along with Aashu full match and we had dinner together. His care for  me was superb and it was my first interaction with him.
+Once he came to our home in 2012 and he discussed with me about financial and future savings planning with me. 
+He was a father figure, and whenever we went to Lucknow either we went to his house or he came to our place.
 His love for Music, love to Shailja was too much.
 
 We will miss you always. 🙏🙏
 
-## ~ vivek saxena
+## vivek saxena
 
-- Quote (2025-03-06): सन 1988 की बात है जब में लखनऊ गया था तो अजय मामाजी मुझे टी टी 
-- खिलाने पॉलिटेक्निक कॉलेज ले जाते थे .....तब मैने उनका रुतबा देखा था.....सिंसियर विद्यार्थी उनको रेस्पेक्ट से विश करते थे और शरारती विद्यार्थी उनसे डरते थे.... 
-- विद्यार्थियों में मामाजी काफी पॉपुलर थे ....ये सब मुझे माइनजी और कॉलेज के विद्यार्थियों से ज्ञात हुआ ....एक ऐसी  शख्सियत जो जिंदादिली और घनिष्ठ संबंधों को प्राथमिकता देकर 
-- लोगों को स्वाभाविक ही अपनी और आकर्षित करे... वो थे हमारे अजय मामाजी ....उनकी यादें सदैव हमारे दिलों में बसी रहेंगी.... ताउम्र ll भगवान मामाजी को अपने श्री चरणों में स्थान दें ...
-- ओम शांति 🙏🙏🙏💐💐💐 <This message was edited>
+ सन 1988 की बात है जब में लखनऊ गया था तो अजय मामाजी मुझे टी टी 
+खिलाने पॉलिटेक्निक कॉलेज ले जाते थे .....तब मैने उनका रुतबा देखा था.....सिंसियर विद्यार्थी उनको रेस्पेक्ट से विश करते थे और शरारती विद्यार्थी उनसे डरते थे.... 
+विद्यार्थियों में मामाजी काफी पॉपुलर थे ....ये सब मुझे माइनजी और कॉलेज के विद्यार्थियों से ज्ञात हुआ ....एक ऐसी  शख्सियत जो जिंदादिली और घनिष्ठ संबंधों को प्राथमिकता देकर 
+लोगों को स्वाभाविक ही अपनी और आकर्षित करे... वो थे हमारे अजय मामाजी ....उनकी यादें सदैव हमारे दिलों में बसी रहेंगी.... ताउम्र ll भगवान मामाजी को अपने श्री चरणों में स्थान दें ...
+ओम शांति 🙏🙏🙏💐💐💐 
 

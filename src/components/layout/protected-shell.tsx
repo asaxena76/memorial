@@ -60,7 +60,7 @@ export function ProtectedShell({ children }: { children: React.ReactNode }) {
       </header>
       <main className="mx-auto w-full max-w-6xl px-6 py-10">{children}</main>
       <footer className="mx-auto w-full max-w-6xl px-6 pb-12 pt-2 text-xs text-muted-foreground">
-        This memorial is private to approved family members.
+        This memorial is open for viewing. Sign in to share a memory.
       </footer>
     </div>
   );
