@@ -4,16 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 
 import { listApprovedPosts, type PostWithId } from "@/lib/db/posts";
 import type { PostMedia } from "@/lib/models/post";
-import { MediaPreview } from "@/components/media/media-preview";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { PhotoSwipeGallery } from "@/components/gallery/photoswipe-gallery";
 
 type GalleryItem = {
-  postId: string;
+  id: string;
   caption: string;
   media: PostMedia;
 };
@@ -21,7 +15,6 @@ type GalleryItem = {
 export default function GalleryPage() {
   const [posts, setPosts] = useState<PostWithId[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<GalleryItem | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -44,7 +37,7 @@ export default function GalleryPage() {
         post.media
           .filter((media) => media.kind === "image")
           .map((media) => ({
-            postId: post.id,
+            id: post.id,
             caption: post.caption,
             media,
           }))
@@ -65,36 +58,10 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-      {items.map((item) => (
-        <button
-          key={`${item.postId}-${item.media.storagePath}`}
-          className="mb-4 w-full break-inside-avoid rounded-2xl border border-border/60 bg-card/60 p-3 text-left shadow-sm"
-          onClick={() => setSelected(item)}
-        >
-          <MediaPreview media={item.media} className="h-auto w-full" />
-          <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
-            {item.caption}
-          </p>
-        </button>
-      ))}
-
-      <Dialog open={Boolean(selected)} onOpenChange={() => setSelected(null)}>
-        <DialogContent className="max-w-3xl">
-          <DialogHeader>
-            <DialogTitle className="font-serif text-xl">
-              {selected?.caption}
-            </DialogTitle>
-          </DialogHeader>
-          {selected ? (
-            <MediaPreview
-              media={selected.media}
-              className="h-auto max-h-[70vh] w-full"
-              mode="contain"
-            />
-          ) : null}
-        </DialogContent>
-      </Dialog>
-    </div>
+    <PhotoSwipeGallery
+      items={items}
+      galleryId="protected-gallery"
+      className="mx-auto w-full max-w-5xl px-8 sm:px-12"
+    />
   );
 }

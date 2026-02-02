@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Arya, Cormorant_Garamond, Open_Sans } from "next/font/google";
 
 import "@/app/globals.css";
 import { AuthProvider } from "@/components/providers/auth-provider";
@@ -12,10 +12,16 @@ const displayFont = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const sansFont = Source_Sans_3({
+const sansFont = Open_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const hindiFont = Arya({
+  subsets: ["devanagari", "latin"],
+  variable: "--font-hindi",
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${displayFont.variable} ${sansFont.variable} min-h-screen bg-background font-sans text-foreground`}
+        className={`${displayFont.variable} ${sansFont.variable} ${hindiFont.variable} min-h-screen bg-background font-sans text-foreground`}
       >
         <ThemeProvider>
           <AuthProvider>
