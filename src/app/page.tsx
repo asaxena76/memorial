@@ -1,9 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
 import { useAuth } from "@/components/providers/auth-provider";
 import { StaticPhotoSwipeGallery } from "@/components/gallery/static-photoswipe-gallery";
 import { heroStripImages } from "@/lib/data/hero-strip";
@@ -27,26 +24,6 @@ export default function PublicHomePage() {
   return (
     <div className="grid gap-10">
       <div className="relative">
-        <div className="pointer-events-none absolute right-0 top-0 z-20 flex flex-wrap gap-3">
-          <div className="pointer-events-auto flex flex-wrap gap-3">
-            {user ? (
-              <Button asChild>
-                <Link href="/submit">Share a memory</Link>
-              </Button>
-            ) : (
-              <Button asChild>
-                <Link href="/login">Sign in to share</Link>
-              </Button>
-            )}
-            <Button variant="outline" asChild>
-              <Link href="/gallery">Open full gallery</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/memories">Read memories</Link>
-            </Button>
-          </div>
-        </div>
-
         <HeroStrip
           images={heroStripImages}
           leftLabel="श्रद्धांजलि"
