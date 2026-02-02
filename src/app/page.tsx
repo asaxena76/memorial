@@ -14,7 +14,7 @@ import { MemoriesRotator } from "@/components/memories/memories-rotator";
 
 export default function PublicHomePage() {
   const { user } = useAuth();
-  const [loading] = useState(false);
+  const [galleryLoading] = useState(false);
 
   const featuredImages = useMemo(
     () =>
@@ -41,6 +41,9 @@ export default function PublicHomePage() {
             <Button variant="outline" asChild>
               <Link href="/gallery">Open full gallery</Link>
             </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/memories">Read memories</Link>
+            </Button>
           </div>
         </div>
 
@@ -53,7 +56,7 @@ export default function PublicHomePage() {
       </div>
 
       <section className="grid gap-4">
-        {loading ? (
+        {galleryLoading ? (
           <p className="text-sm text-muted-foreground">Loading gallery...</p>
         ) : featuredImages.length === 0 ? (
           <p className="text-sm text-muted-foreground">

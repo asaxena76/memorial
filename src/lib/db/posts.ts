@@ -52,6 +52,18 @@ export async function listPendingPosts(max = 50): Promise<PostWithId[]> {
     .filter((post): post is PostWithId => Boolean(post));
 }
 
+export async function listAllPosts(max = 200): Promise<PostWithId[]> {
+  const q = query(
+    collection(db, "posts"),
+    orderBy("createdAt", "desc"),
+    limit(max)
+  );
+  const snap = await getDocs(q);
+  return snap.docs
+    .map((docSnap) => parsePost(docSnap.id, docSnap.data()))
+    .filter((post): post is PostWithId => Boolean(post));
+}
+
 export async function listPostsByUser(uid: string): Promise<PostWithId[]> {
   const q = query(
     collection(db, "posts"),

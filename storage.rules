@@ -6,18 +6,22 @@ service firebase.storage {
       return request.auth != null;
     }
 
-    function isApproved() {
-      return request.auth != null && request.auth.token.approved == true;
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
     }
 
     match /uploads/{uid}/{allPaths=**} {
       allow read: if true;
-      allow write: if isApproved()
-        && isSignedIn()
+      allow write: if isSignedIn()
         && request.auth.uid == uid
         && (request.resource.contentType.matches('image/.*')
             || request.resource.contentType == 'video/mp4')
         && request.resource.size < 52428800;
+    }
+
+    match /thumbnails/{postId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
     }
 
     match /{allPaths=**} {

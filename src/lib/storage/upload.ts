@@ -1,5 +1,5 @@
 import { doc, collection } from "firebase/firestore";
-import { ref, uploadBytesResumable } from "firebase/storage";
+import { ref, uploadBytes, uploadBytesResumable } from "firebase/storage";
 
 import { db, storage } from "@/lib/firebase/client";
 
@@ -49,4 +49,23 @@ export async function uploadPostFile({
       }
     );
   });
+}
+
+export async function uploadThumbnailFile({
+  postId,
+  file,
+}: {
+  postId: string;
+  file: File;
+}) {
+  const filename = `${Date.now()}-${file.name}`;
+  const storagePath = `thumbnails/${postId}/${filename}`;
+  const storageRef = ref(storage, storagePath);
+
+  await uploadBytes(storageRef, file, {
+    contentType: file.type || "application/octet-stream",
+    cacheControl: "public, max-age=31536000, immutable",
+  });
+
+  return storagePath;
 }

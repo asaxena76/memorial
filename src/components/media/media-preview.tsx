@@ -24,7 +24,8 @@ export function MediaPreview({
     const load = async () => {
       try {
         if (media.kind === "image") {
-          const downloadUrl = await getImageUrl(media.storagePath);
+          const path = media.thumbnailPath || media.storagePath;
+          const downloadUrl = await getImageUrl(path);
           if (active) setUrl(downloadUrl);
         } else {
           const downloadUrl = await getVideoUrl(media.storagePath);

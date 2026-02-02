@@ -24,7 +24,9 @@ export function PhotoSwipeGallery({
   galleryId: string;
   className?: string;
 }) {
-  const [urlMap, setUrlMap] = useState<Record<string, string>>({});
+  const [urlMap, setUrlMap] = useState<
+    Record<string, { thumbUrl: string; fullUrl: string }>
+  >({});
   const [sizeMap, setSizeMap] = useState<Record<string, [number, number]>>({});
 
   const imageItems = useMemo(
@@ -38,9 +40,11 @@ export function PhotoSwipeGallery({
     const load = async () => {
       const entries = await Promise.all(
         imageItems.map(async (item) => {
-          const path = item.media.thumbnailPath || item.media.storagePath;
-          const url = await getImageUrl(path);
-          return [item.media.storagePath, url] as const;
+          const fullUrl = await getImageUrl(item.media.storagePath);
+          const thumbUrl = item.media.thumbnailPath
+            ? await getImageUrl(item.media.thumbnailPath)
+            : fullUrl;
+          return [item.media.storagePath, { thumbUrl, fullUrl }] as const;
         })
       );
 
@@ -61,14 +65,14 @@ export function PhotoSwipeGallery({
 
     const loadSizes = async () => {
       const pending = imageItems.filter((item) => {
-        const url = urlMap[item.media.storagePath];
-        return url && !sizeMap[item.media.storagePath];
+        const urls = urlMap[item.media.storagePath];
+        return urls?.fullUrl && !sizeMap[item.media.storagePath];
       });
       if (pending.length === 0) return;
 
       const results = await Promise.all(
         pending.map((item) => {
-          const url = urlMap[item.media.storagePath]!;
+          const url = urlMap[item.media.storagePath]!.fullUrl;
           return new Promise<[string, [number, number]]>((resolve) => {
             const img = new Image();
             img.onload = () => {
@@ -127,7 +131,7 @@ export function PhotoSwipeGallery({
       )}
     >
       {imageItems.map((item) => {
-        const url = urlMap[item.media.storagePath];
+        const urls = urlMap[item.media.storagePath];
         const size = sizeMap[item.media.storagePath];
         const width = size?.[0] ?? item.media.width ?? 1600;
         const height = size?.[1] ?? item.media.height ?? 1600;
@@ -135,18 +139,18 @@ export function PhotoSwipeGallery({
         return (
           <a
             key={`${item.id}-${item.media.storagePath}`}
-            href={url || "#"}
+            href={urls?.fullUrl || "#"}
             data-pswp-width={width}
             data-pswp-height={height}
             data-pswp-title={item.caption}
             className={cn(
               "relative block aspect-square overflow-hidden bg-muted/20",
-              url ? "cursor-zoom-in" : "pointer-events-none"
+              urls?.fullUrl ? "cursor-zoom-in" : "pointer-events-none"
             )}
           >
-            {url ? (
+            {urls?.fullUrl ? (
               <img
-                src={url}
+                src={urls.thumbUrl}
                 alt={item.caption || "Memorial photo"}
                 loading="lazy"
                 decoding="async"
