@@ -39,23 +39,21 @@ export function HeroStrip({
       </div>
 
       <div className="md:hidden">
-        <div className="flex snap-x snap-mandatory gap-0 overflow-x-auto">
+        <div className="grid grid-cols-1 gap-0">
           {activeImages.slice(0, 3).map((src) => (
             <div
               key={src}
-              className="snap-start shrink-0"
-              style={{ width: "100vw" }}
+              className="relative w-full"
+              style={{ aspectRatio: "1 / 1" }}
             >
-              <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
-                <img
-                  src={src}
-                  alt="Memorial hero"
-                  className={cn(
-                    "absolute inset-0 h-full w-full object-cover",
-                    "brightness-[1.06] contrast-[0.92]"
-                  )}
-                />
-              </div>
+              <img
+                src={src}
+                alt="Memorial hero"
+                className={cn(
+                  "absolute inset-0 h-full w-full object-cover",
+                  "brightness-[1.06] contrast-[0.92]"
+                )}
+              />
             </div>
           ))}
         </div>

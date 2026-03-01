@@ -85,7 +85,10 @@ export function StaticPhotoSwipeGallery({
   return (
     <div
       id={galleryId}
-      className={cn("grid grid-cols-3 gap-6 sm:gap-8", className)}
+      className={cn(
+        "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8",
+        className
+      )}
     >
       {imageItems.map((item) => {
         const size = sizeMap[item.src];
